@@ -1,0 +1,27 @@
+.flex_center
+    display: flex
+    justify-content: center
+    align-items: center
+.introduct
+    margin-top: 5vh
+    display: grid
+    grid-template-rows: auto auto auto
+    h2, p
+        width: 100%
+        text-align: center
+        margin: 0
+        font-size: 2rem
+    p 
+        margin-top: 10px
+    .flex_center
+        width: 100%
+        .profilepic
+            margin-top: 15vh
+            border-radius: 50%
+            background-image: url("../img/profile_pic.png")
+            width: 50vw
+            height: 50vw
+            background-size: cover
+            @media only screen and (min-width: 500px)
+                width: 40vh
+                height: 40vh
