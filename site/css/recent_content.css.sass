@@ -1,0 +1,55 @@
+.recent_container
+    h2
+        width: 100%
+        text-align: center
+    .recent_content
+        // position: relative
+        width: 80vw
+        height: 40vw
+        background: white
+        margin: 20px
+        border-radius: 10px
+        padding: 0
+        @media only screen and (min-width: 500px)
+            width: 55vh
+            height: 27.5vh
+    flex-wrap: wrap
+.recent_content .content
+    background: rgba(0,0,0,0)
+    width: 100%
+    height: 100%
+.recent_content:hover .content
+    background: rgba(0,0,0,0.5)
+    padding-top: 8px
+    display: flex
+    justify-content: center
+    align-content: center
+    flex-direction: column
+    .github_link
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        background: purple
+        border-radius: 2px
+        transition: all 0.2s ease
+        min-width: 50%
+        max-width: 80%
+    .github_link:hover
+        border-radius: 8px
+.recent_content *
+    transition: all 0.2s linear
+    color: rgba(0,0,0,0)
+    margin: 0
+.recent_content:hover *
+    color: rgba(255,255,255,1)    
+#recent_1
+    background-image: url("../img/calendar_background@480x270.jpeg")
+    background-position: center
+    background-size: 110%
+    background-repeat: no-repeat
+.fade_layer
+    position: absolute
+    width: 10px !important
+    height: 10px !important
+    // background: black
