@@ -5,8 +5,6 @@ function hideBoot() {
     }, 2500);
 }
 
-
-
 setTimeout(function () {
     hideBoot();
-}, 1);
+}, 2);

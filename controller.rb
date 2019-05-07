@@ -1,6 +1,7 @@
 layout('site/layout.html.erb')
 
 ignore('README.md')
+ignore('.gitignore')
 ignore(/misc/)
 ignore(/psd/)
 ignore('site/css/animated_circle.css.sass')
