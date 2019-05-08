@@ -4,6 +4,7 @@
     justify-content: center
     align-items: center
 .introduct
+    font-family: 'Gugi', cursive
     margin-top: 5vh
     display: grid
     grid-template-rows: auto auto auto
@@ -35,7 +36,7 @@
     align-items: center
 .button:hover
         background: $secondary-color-modified
-        border-radius: 12px
+        border-radius: 12px !important
 
 .hire_me
     margin-top: 80px
@@ -43,23 +44,49 @@
     display: flex
     align-items: center
     background: $secondary-color
-    *
+    padding-bottom: 1.5rem
+    .content
+        width: 100%
+        display: grid
+        grid-template-rows: auto auto auto
         text-align: center
+        a
+            width: 200px
+            justify-self: center
+            text-decoration: none
+            color: white
+            span
+                border: black 1px solid
+                border-radius: 2px
+    @media only screen and (min-width: 500px)
+        h3
+            font-size: 0.9rem
+
+    span
+        width: 100%
+
+footer
+    background: $secondary-color
+    padding-bottom: 10px
+    h2
+        margin: 0
+        text-align: center
+    h3
+        margin-top: 4px
+    .icons
+        padding-top: 4px
         display: flex
         justify-content: center
         align-items: center
-        flex-wrap: wrap
-        a
-            text-decoration: none
-            color: white
-            *
-                border: black 2px solid
-                border-radius: 1px
-    span
-        width: 200px !important
-
-footer
-    display: flex
-    justify-content: center
-    align-content: center
-    background: $secondary-color
+        width: 100%
+        text-decoration: none
+        .social_icon
+            width: 50px !important
+            height: 50px !important
+    a
+        margin-left: 10px
+        path
+            transition: all 0.2s ease
+        svg:hover
+            path
+                fill: $secondary-color-modified

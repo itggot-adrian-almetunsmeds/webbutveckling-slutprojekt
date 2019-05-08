@@ -1,6 +1,7 @@
 body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-family: "lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; }
 
 .wrapper {
   background: black;
@@ -8,6 +9,9 @@ body {
   width: 100%;
   min-width: 340px;
   color: white; }
+
+h1, h2, h3, p {
+  cursor: default; }
 
 .circle_wrapper {
   position: fixed;
@@ -114,6 +118,7 @@ header {
   align-items: center; }
 
 .introduct {
+  font-family: "Gugi", cursive;
   margin-top: 5vh;
   display: grid;
   grid-template-rows: auto auto auto; }
@@ -148,34 +153,58 @@ header {
 
 .button:hover {
   background: #0082c4;
-  border-radius: 12px; }
+  border-radius: 12px !important; }
 
 .hire_me {
   margin-top: 80px;
   position: relative;
   display: flex;
   align-items: center;
-  background: #006699; }
-  .hire_me * {
-    text-align: center;
+  background: #006699;
+  padding-bottom: 1.5rem; }
+  .hire_me .content {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    text-align: center; }
+    .hire_me .content a {
+      width: 200px;
+      justify-self: center;
+      text-decoration: none;
+      color: white; }
+      .hire_me .content a span {
+        border: black 1px solid;
+        border-radius: 2px; }
+  @media only screen and (min-width: 500px) {
+    .hire_me h3 {
+      font-size: 0.9rem; } }
+  .hire_me span {
+    width: 100%; }
+
+footer {
+  background: #006699;
+  padding-bottom: 10px; }
+  footer h2 {
+    margin: 0;
+    text-align: center; }
+  footer h3 {
+    margin-top: 4px; }
+  footer .icons {
+    padding-top: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; }
-    .hire_me * a {
-      text-decoration: none;
-      color: white; }
-      .hire_me * a * {
-        border: black 2px solid;
-        border-radius: 1px; }
-  .hire_me span {
-    width: 200px !important; }
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  background: #006699; }
+    width: 100%;
+    text-decoration: none; }
+    footer .icons .social_icon {
+      width: 50px !important;
+      height: 50px !important; }
+  footer a {
+    margin-left: 10px; }
+    footer a path {
+      transition: all 0.2s ease; }
+    footer a svg:hover path {
+      fill: #0082c4; }
 
 .container {
   position: relative;
