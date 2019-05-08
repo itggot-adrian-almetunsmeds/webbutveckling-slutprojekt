@@ -1,0 +1,44 @@
+menu
+    width: auto
+    margin: 0
+    padding: 0
+    overflow: hidden
+    background: white
+    .hamburger
+        margin-left: 10px
+        margin-top: 10px
+        cursor: pointer
+        span
+            display: block
+            width: 44px
+            height: 4px
+            background: white
+            margin-top: 5px
+            position: relative
+            border-radius: 2px
+            transform-origin: 4px 0px
+  
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
+        position: fixed
+        left: 10px
+        top: 10px
+        z-index: 1000
+    .material-icons
+        font-size: 2.5rem
+
+menu.shazam
+    .hamburger
+        span
+            opacity: 1
+            transform: rotate(45deg) translateY(-11px)
+            background: white // This one may change :TODO:
+            transform-origin: left center
+        span:nth-last-child(2)
+            opacity: 0
+            transform: rotate(0deg) scale(0.2, 0.2)
+        span:nth-last-child(1)
+            transform: rotate(-45deg) translateY(5.5px)
+    .wrapper
+        transform: rotate(-20deg)
+        transform-origin: top left
+        transition: all 0.8s ease
