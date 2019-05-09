@@ -10,20 +10,23 @@ setTimeout(function () {
 }, 2);
 
 // Toggles the menu
-document.querySelector('.hamburger').addEventListener("click", function(){
+document.querySelector('.hamburger').addEventListener("click", function () {
     document.querySelector('menu').classList.toggle('shazam')
     document.querySelector('nav').classList.toggle('shazam')
 })
 
-document.querySelector('.wrapper').addEventListener("click", function(){
+function removeShazam() {
     document.querySelector('menu').classList.remove('shazam')
     document.querySelector('nav').classList.remove('shazam')
+}
+document.querySelector('.wrapper').addEventListener("click", function () {
+    removeShazam()
 })
 
-window.addEventListener('scroll', function(ev) {
+window.addEventListener('scroll', function (ev) {
     let someDiv = document.querySelector('body');
-    let distanceToTop = someDiv.getBoundingClientRect().top; 
+    let distanceToTop = someDiv.getBoundingClientRect().top;
     let wrapper = document.querySelector(".wrapper")
     wrapper.style.transformOrigin = "left " + (distanceToTop * -1) + "px"
     console.log(distanceToTop);
- });
+});
