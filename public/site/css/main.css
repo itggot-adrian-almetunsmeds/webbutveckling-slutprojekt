@@ -111,7 +111,6 @@ header {
   align-items: center; }
 
 .introduct {
-  font-family: "Gugi", cursive;
   margin-top: 5vh;
   display: grid;
   grid-template-rows: auto auto auto; }
@@ -121,7 +120,8 @@ header {
     margin: 0;
     font-size: 2rem; }
   .introduct p {
-    margin-top: 10px; }
+    margin-top: 10px;
+    font-family: "Gugi", cursive; }
   .introduct .flex_center {
     width: 100%; }
     .introduct .flex_center .profilepic {
@@ -328,6 +328,7 @@ menu {
     margin-left: 10px;
     margin-top: 10px;
     cursor: pointer;
+    transition: all 0.8s ease;
     position: fixed;
     left: 10px;
     top: 10px;
@@ -342,20 +343,61 @@ menu {
       border-radius: 2px;
       transform-origin: 4px 0px;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
-  menu .material-icons {
-    font-size: 2.5rem; }
 
-menu.shazam .hamburger span {
-  opacity: 1;
-  transform: rotate(45deg) translateY(-11px);
-  background: white;
-  transform-origin: left center; }
-menu.shazam .hamburger span:nth-last-child(2) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2); }
-menu.shazam .hamburger span:nth-last-child(1) {
-  transform: rotate(-45deg) translateY(5.5px); }
+.wrapper {
+  transition: all 0.8s ease; }
+
+menu.shazam .hamburger {
+  transform: rotate(-45deg);
+  transition: all 0.8s ease; }
+  menu.shazam .hamburger span {
+    opacity: 1;
+    transform: rotate(45deg) translateY(-11px);
+    background: white;
+    transform-origin: left center; }
+  menu.shazam .hamburger span:nth-last-child(2) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0, 0); }
+  menu.shazam .hamburger span:nth-last-child(1) {
+    transform: rotate(-45deg) translateY(5.5px); }
 menu.shazam .wrapper {
   transform: rotate(-20deg);
   transform-origin: top left;
-  transition: all 0.8s ease; }
+  transition: transform 0.8s ease; }
+menu.shazam .hamburger:hover {
+  transition-delay: 0.2s;
+  transform: rotate(135deg); }
+
+nav {
+  position: fixed;
+  left: -20vw;
+  transition: all 0.8s ease;
+  color: white;
+  opacity: 0;
+  font-size: 2rem;
+  bottom: 10vh; }
+  @media only screen and (min-width: 500px) {
+    nav {
+      font-size: 1.2rem;
+      bottom: 10vh; } }
+  nav ul {
+    transition: all 0.1s linear; }
+  nav a {
+    text-decoration: none;
+    color: black; }
+  nav ul:hover {
+    transform: scale(1.2); }
+  nav i {
+    font-size: 1.5rem; }
+  nav svg {
+    transition: all 0.8s ease;
+    color: white;
+    opacity: 0; }
+
+nav.shazam {
+  color: black;
+  opacity: 1;
+  left: 0; }
+  nav.shazam svg {
+    color: black;
+    opacity: 1; }
