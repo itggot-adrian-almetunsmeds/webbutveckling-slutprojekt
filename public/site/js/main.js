@@ -7,7 +7,7 @@ function hideBoot() {
 
 setTimeout(function () {
     hideBoot();
-}, 2);
+}, 2000);
 
 // Toggles the menu
 document.querySelector('.hamburger').addEventListener("click", function () {
