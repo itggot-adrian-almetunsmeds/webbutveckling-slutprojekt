@@ -23,10 +23,53 @@ document.querySelector('.wrapper').addEventListener("click", function () {
     removeShazam()
 })
 
-window.addEventListener('scroll', function (ev) {
+window.addEventListener('scroll', function (e) {
     let someDiv = document.querySelector('body');
     let distanceToTop = someDiv.getBoundingClientRect().top;
     let wrapper = document.querySelector(".wrapper")
     wrapper.style.transformOrigin = "left " + (distanceToTop * -1) + "px"
     console.log(distanceToTop);
 });
+
+function hideError(hide) {
+    let error = document.querySelectorAll("." + hide)
+    error.forEach(element => {
+        element.style.padding = "0"
+        element.style.top = "-200vh"
+    });
+}
+
+function sendForm() {
+    var email = document.querySelector('#email')
+    var value = email.value
+    if (value.includes("@") == false || value.includes(".") == false) {
+        let error = document.createElement("div")
+        error.classList.add("email_error")
+        error.classList.add("error")
+        error.innerHTML = "<p>Please insert a valid email adress</p>"
+        document.querySelector(".errors").appendChild(error)
+        setTimeout(function () {
+            hideError("email_error");
+            setTimeout(function () {
+                error.outerHTML = ""
+            }, 1500);
+        }, 2000);
+    }
+    var topic = document.querySelector('#topic')
+    value = topic.value
+    if (value == "Insert topic" || value == "" || value == " " || value == " Insert topic") {
+        let error = document.createElement("div")
+        error.classList.add("topic_error")
+        error.classList.add("error")
+        error.innerHTML = "<p>Please insert a valid topic</p>"
+        console.log(error)
+        document.querySelector(".errors").appendChild(error)
+        setTimeout(function () {
+            hideError("topic_error");
+            setTimeout(function () {
+                error.outerHTML = ""
+            }, 1500);
+        }, 2000);
+
+    }
+}

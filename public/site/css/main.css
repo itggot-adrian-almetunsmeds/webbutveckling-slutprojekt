@@ -111,7 +111,7 @@ header {
   align-items: center; }
 
 .introduct {
-  margin-top: 5vh;
+  margin: 5vh 0 8vh 0;
   display: grid;
   grid-template-rows: auto auto auto; }
   .introduct h2, .introduct p {
@@ -160,17 +160,20 @@ header {
     display: grid;
     grid-template-rows: auto auto auto;
     text-align: center; }
+    .hire_me .content h3 {
+      padding: 0 4px 0 4px; }
     .hire_me .content a {
       width: 200px;
       justify-self: center;
       text-decoration: none;
       color: white; }
       .hire_me .content a span {
-        border: black 1px solid;
+        border: white 1px solid;
         border-radius: 2px; }
   @media only screen and (min-width: 500px) {
     .hire_me h3 {
-      font-size: 0.9rem; } }
+      font-size: 0.9rem;
+      font-weight: 500; } }
   .hire_me span {
     width: 100%; }
 
@@ -218,24 +221,37 @@ footer {
   .color_container h1 {
     margin: 0;
     padding: 0; }
+  .color_container * {
+    max-width: 80vw;
+    margin-left: auto !important;
+    margin-right: auto !important; }
+    @media only screen and (min-width: 500px) {
+      .color_container * {
+        max-width: 60vw; } }
+  .color_container p {
+    text-align: center;
+    padding-bottom: 5px; }
 
 .experience_container {
-  background: white;
-  color: black;
+  background: black;
+  color: white;
   border-radius: 10px;
   min-height: 100px;
   width: 80%;
   position: relative;
   top: -40px;
   left: 10%;
-  border: rgba(255, 255, 255, 0.5) 1px solid;
-  box-shadow: rgba(255, 255, 255, 0.5) 0px 2px; }
+  border: rgba(255, 255, 225, 0.5) 1px solid;
+  box-shadow: rgba(255, 255, 225, 0.5) 0px 2px; }
 
 .experience_content {
-  padding: 5px; }
+  padding: 5px;
+  text-align: center; }
+  .experience_content h3 {
+    font-size: 1.5rem; }
 
 .experience_content:nth-child(1n + 2) {
-  border-top: rgba(0, 0, 0, 0.5) 1px solid; }
+  border-top: rgba(255, 255, 255, 0.5) 1px solid; }
 
 .recent_container {
   flex-wrap: wrap; }
@@ -325,13 +341,15 @@ menu {
   overflow: hidden;
   background: white; }
   menu .hamburger {
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 12px;
     cursor: pointer;
     transition: all 0.8s ease;
+    transform-origin: 50% 51%;
+    width: 50px;
+    height: 50px;
     position: fixed;
     left: 10px;
-    top: 10px;
+    top: calc((2.67em / 2) - (29px / 2.5) + 4px);
     z-index: 1000; }
     menu .hamburger span {
       display: block;
@@ -341,32 +359,34 @@ menu {
       margin-top: 5px;
       position: relative;
       border-radius: 2px;
-      transform-origin: 4px 0px;
+      transform-origin: left center;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
 
 .wrapper {
   transition: all 0.8s ease; }
 
 menu.shazam .hamburger {
-  transform: rotate(-45deg);
+  transform: rotate(-20deg);
   transition: all 0.8s ease; }
   menu.shazam .hamburger span {
     opacity: 1;
-    transform: rotate(45deg) translateY(-11px);
+    transform: rotate(45deg);
     background: white;
     transform-origin: left center; }
+  menu.shazam .hamburger span:nth-last-child(3) {
+    transform: rotate(45deg) translate(12px, -6px); }
   menu.shazam .hamburger span:nth-last-child(2) {
     opacity: 0;
     transform: rotate(0deg) scale(0, 0); }
   menu.shazam .hamburger span:nth-last-child(1) {
-    transform: rotate(-45deg) translateY(5.5px); }
+    transform: rotate(-45deg) translateY(22.1px); }
 menu.shazam .wrapper {
   transform: rotate(-20deg);
   transform-origin: top left;
   transition: transform 0.8s ease; }
 menu.shazam .hamburger:hover {
   transition-delay: 0.2s;
-  transform: rotate(135deg); }
+  transform: rotate(180deg); }
 
 nav {
   position: fixed;
@@ -374,14 +394,30 @@ nav {
   transition: all 0.8s ease;
   color: white;
   opacity: 0;
-  font-size: 2rem;
+  font-size: 1.4rem;
   bottom: 10vh; }
   @media only screen and (min-width: 500px) {
     nav {
       font-size: 1.2rem;
       bottom: 10vh; } }
+  @media only screen and (max-height: 550px) {
+    nav {
+      bottom: 1vh; } }
   nav ul {
-    transition: all 0.1s linear; }
+    transition: all 0.1s linear;
+    padding-left: 15px; }
+    @media only screen and (min-width: 400px) {
+      nav ul {
+        padding-left: initial; } }
+    @media only screen and (min-width: 360px) {
+      nav ul {
+        padding-left: 25px; } }
+    @media only screen and (min-width: 560px) {
+      nav ul {
+        padding-left: 40px; } }
+    @media only screen and (min-width: 700px) {
+      nav ul {
+        font-size: 1.2rem; } }
   nav a {
     text-decoration: none;
     color: black; }
@@ -401,3 +437,45 @@ nav.shazam {
   nav.shazam svg {
     color: black;
     opacity: 1; }
+
+.contact {
+  margin-left: 10vw;
+  font-family: "Gugi", cursive;
+  padding: 0 0 30px 0;
+  transition: all 0.2s ease; }
+  .contact input, .contact textarea {
+    border-radius: 5px;
+    border-width: 0; }
+  .contact #message {
+    width: 80vw;
+    min-height: 40vh; }
+  .contact .submit {
+    padding: 3px 5px 3px 5px; }
+  .contact button {
+    border-radius: 3px;
+    padding: 3px 5px 3px 5px;
+    border-width: 0;
+    background: #006699;
+    color: white; }
+  .contact button:hover {
+    background: #0082c4; }
+
+.errors {
+  min-width: 60%;
+  margin: 0 auto 0 auto;
+  position: fixed;
+  top: 20px;
+  left: 50px;
+  z-index: 1000000;
+  overflow: hidden; }
+
+.error {
+  margin-top: 3px;
+  background: red;
+  transition: all 2s ease;
+  padding: 5px 3px 5px 3px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0; }
