@@ -28,7 +28,6 @@ window.addEventListener('scroll', function (e) {
     let distanceToTop = someDiv.getBoundingClientRect().top;
     let wrapper = document.querySelector(".wrapper")
     wrapper.style.transformOrigin = "left " + (distanceToTop * -1) + "px"
-    console.log(distanceToTop);
 });
 
 function hideError(hide) {
@@ -62,7 +61,6 @@ function sendForm() {
         error.classList.add("topic_error")
         error.classList.add("error")
         error.innerHTML = "<p>Please insert a valid topic</p>"
-        console.log(error)
         document.querySelector(".errors").appendChild(error)
         setTimeout(function () {
             hideError("topic_error");
