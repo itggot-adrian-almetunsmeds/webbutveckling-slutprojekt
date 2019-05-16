@@ -2,12 +2,13 @@ function hideBoot() {
     document.querySelector('.circle_wrapper').style.top = '-200vh'
     setTimeout(function () {
         document.querySelector('.circle_wrapper').outerHTML = ''
-    }, 2500);
+        document.cookie = "visited=true;";
+    }, 800);
 }
 
-setTimeout(function () {
-    hideBoot();
-}, 2000);
+addEventListener("load", function () {
+    hideBoot()
+})
 
 // Toggles the menu
 document.querySelector('.hamburger').addEventListener("click", function () {
@@ -19,6 +20,7 @@ function removeShazam() {
     document.querySelector('menu').classList.remove('shazam')
     document.querySelector('nav').classList.remove('shazam')
 }
+
 document.querySelector('.wrapper').addEventListener("click", function () {
     removeShazam()
 })
@@ -38,6 +40,7 @@ function hideError(hide) {
     });
 }
 
+// Validates the form data and then supposedly sends the data to a destination
 function sendForm() {
     var email = document.querySelector('#email')
     var value = email.value
